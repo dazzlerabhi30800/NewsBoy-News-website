@@ -1,1 +1,5 @@
-.App {}
+.App {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, #1e0649, #000000);
+}
