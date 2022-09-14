@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Style.css';
+import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
     constructor() {
@@ -7,6 +8,12 @@ export default class Navbar extends Component {
         this.state = {
             clicked: false,
         }
+    }
+
+    handleLinks = (e) => {
+        const links = document.querySelectorAll('.nav--list li a');
+        links.forEach(link => link.classList.remove('select'));
+        e.target.classList.add('select');
     }
 
     handleMenu = () => {
@@ -142,11 +149,11 @@ export default class Navbar extends Component {
                     <i onClick={this.handleMenu} className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </header>
                 <ul className={this.state.clicked ? 'nav--list active' : 'nav--list'}>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Entertainment</a></li>
-                    <li><a href="#">Health</a></li>
+                    <li><Link to="/" className='select' onClick={this.handleLinks}>General</Link></li>
+                    <li><Link to="/science" onClick={this.handleLinks}>Science</Link></li>
+                    <li><Link to="/sports" onClick={this.handleLinks}>Sports</Link></li>
+                    <li><Link to="/entertainment" onClick={this.handleLinks}>Entertainment</Link></li>
+                    <li><Link to="/technology" onClick={this.handleLinks}>Technology</Link></li>
                 </ul>
             </nav>
         )

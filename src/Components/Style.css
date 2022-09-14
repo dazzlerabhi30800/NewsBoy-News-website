@@ -8,6 +8,10 @@
     transition: all .3s linear;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --font-poppins: 'Poppins', sans-serif;
 }
@@ -99,15 +103,20 @@ header>i:hover {
     transition: all .3s linear
 }
 
+.nav--list li>a.select {
+    color: #85f759;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .nav--list li>a:hover {
-    color: #7cf743;
+    color: #f7e543;
     text-decoration: underline;
 }
 
 
 /* NEWS ITEM */
 .news--container {
-    justify-content: center;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -125,7 +134,7 @@ header>i:hover {
 .news--wrapper {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     place-items: center;
 }
 
@@ -135,32 +144,39 @@ header>i:hover {
     flex-direction: column;
     gap: .8rem;
     min-width: 300px;
-    width: 500px;
-    max-width: 450px;
-    border-radius: 12px 12px 10px 10px;
-    background: white;
+    width: 70%;
+    max-width: 400px;
+    border-radius: 5px;
+    background: radial-gradient(circle, #280a79, #210b35);
+    color: white;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .news--card>img {
     width: 100%;
-    height: 280px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    transition: all .3s linear;
+}
+
+.news--card:hover {
+    transform: scale(1.015);
 }
 
 .news--card>h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 1px 10px;
 }
 
 .news--card>p {
     margin: 0px 10px;
     width: 90%;
-    font-size: .8rem;
+    font-size: .9rem;
     line-height: 1.6;
 }
 
-.news--card>button {
+.news--card>a {
     width: fit-content;
     margin: 5px 10px 15px;
     padding: 8px 1rem;
@@ -171,10 +187,19 @@ header>i:hover {
     color: white;
     font-weight: bolder;
     transition: all .3s linear;
+    text-decoration: none;
 }
 
-.news--card>button:hover {
+.news--card>a:hover {
     background: #f121d6;
+}
+
+/* SPINNER  */
+.loader--container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (hover: hover) {
