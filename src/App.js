@@ -1,13 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import News from './Components/News';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Routes,
-  Link
 } from "react-router-dom";
 
 

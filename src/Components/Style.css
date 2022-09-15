@@ -129,6 +129,7 @@ header>i:hover {
     font-weight: 700;
     margin: 5px auto;
     font-size: 2rem;
+    text-align: center;
 }
 
 .news--wrapper {
