@@ -17,11 +17,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<News key="general" category="general" />} />
-          <Route path="/science" element={<News key="science" category="science" />} />
-          <Route path="/sports" element={<News key="sports" category="sports" />} />
-          <Route path="/entertainment" element={<News key="entertainment" category="entertainment" />} />
-          <Route path="/technology" element={<News key="technology" category="technology" />} />
+          <Route exact path="/" element={<News key="general" category="general" />} />
+          <Route exact path="/science" element={<News key="science" category="science" />} />
+          <Route exact path="/sports" element={<News key="sports" category="sports" />} />
+          <Route exact path="/entertainment" element={<News key="entertainment" category="entertainment" />} />
+          <Route exact path="/technology" element={<News key="technology" category="technology" />} />
         </Routes>
         {/* <News /> */}
       </Router>
