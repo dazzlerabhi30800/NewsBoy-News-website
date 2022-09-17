@@ -10,6 +10,8 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 :root {
@@ -91,7 +93,7 @@ header>i:hover {
 }
 
 .nav--list.active {
-    height: 200px;
+    height: 280px;
     overflow: visible;
     opacity: 1;
     flex-direction: column;
@@ -150,9 +152,12 @@ header>i:hover {
     width: 70%;
     max-width: 430px;
     border-radius: 5px;
-    background: radial-gradient(circle, #280a79, #210b35);
+    box-shadow: 1px 1px 40px 2px #111111fb;
+    background: #ffffff10;
     color: white;
     transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 4px double #fc6ecd;
+    border-bottom: 4px double #f35697;
 }
 
 .news--card>img {
@@ -185,17 +190,30 @@ header>i:hover {
     padding: 8px 1rem;
     border: none;
     outline: none;
-    border-radius: 5px;
-    background: red;
+    border-radius: 0px;
+    box-shadow: 2px 2px 0px 1px #f77d37fa;
+    background-image: linear-gradient(90deg, #ff006a 0%, #eb561b 49%, #f15416 80%, #f80a0a 100%);
     color: white;
     font-weight: bolder;
     transition: all .3s linear;
     text-decoration: none;
 }
 
-.news--card>a:hover {
-    background: #f121d6;
+.news--card>a:active {
+    box-shadow: none;
+    transform: translate(4px, 3px);
 }
+
+.news--card>a:hover {
+    animation: slidebg 3s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+        background-position: 30vw
+    }
+}
+
 
 /* SPINNER  */
 .loader--container {
