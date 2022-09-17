@@ -141,6 +141,7 @@ header>i:hover {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     place-items: center;
+    padding: 1rem;
 }
 
 /* NEWS CARD  */
@@ -158,6 +159,7 @@ header>i:hover {
     transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-top: 4px double #fc6ecd;
     border-bottom: 4px double #f35697;
+    position: relative;
 }
 
 .news--card>img {
@@ -214,6 +216,15 @@ header>i:hover {
     }
 }
 
+.news--card>span {
+    position: absolute;
+    right: 0px;
+    top: -4px;
+    background: #b90e0e;
+    padding: 3px 10px;
+    border-radius: 0px 5px 0px 5px;
+    font-weight: 500;
+}
 
 /* SPINNER  */
 .loader--container {

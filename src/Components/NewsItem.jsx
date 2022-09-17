@@ -7,6 +7,7 @@ const NewsItem = ({ article }) => {
             <h3 className="title">{article.title}</h3>
             <p>{article.description}</p>
             <a target="_blank" href={article.url}>Read More</a>
+            <span className="source">{article.source.name}</span>
         </div>
     )
 }
