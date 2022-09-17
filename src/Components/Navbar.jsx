@@ -9,7 +9,6 @@ const Navbar = () => {
     const { pathname } = location;
 
     const splitLocation = pathname.split("/");
-    console.log(splitLocation);
 
     const handleMenu = () => {
         if (!clicked) {
@@ -19,6 +18,9 @@ const Navbar = () => {
             setClicked(false)
         }
     }
+
+
+
     return (
         <nav className={clicked ? 'active' : ''}>
             <header>
@@ -108,6 +110,8 @@ const Navbar = () => {
                 <li><NavLink className={splitLocation[1] === "sports" ? 'select' : ""} to="/sports">Sports</NavLink></li>
                 <li><NavLink className={splitLocation[1] === "entertainment" ? 'select' : ""} to="/entertainment">Entertainment</NavLink></li>
                 <li><NavLink className={splitLocation[1] === "technology" ? 'select' : ""} to="/technology">Technology</NavLink></li>
+                <li><NavLink className={splitLocation[1] === "health" ? 'select' : ""} to="/health">Health</NavLink></li>
+                <li><NavLink className={splitLocation[1] === "business" ? 'select' : ""} to="/business">Business</NavLink></li>
             </ul>
         </nav>
     )

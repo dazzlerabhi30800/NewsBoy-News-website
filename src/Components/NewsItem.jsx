@@ -11,4 +11,5 @@ const NewsItem = ({ article }) => {
     )
 }
 
+
 export default NewsItem;

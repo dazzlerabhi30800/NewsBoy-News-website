@@ -22,17 +22,22 @@ const News = (props) => {
 
     useEffect(() => {
         updateNews();
+        document.title = "NewsBoy- " + capitalizeFirst(props.category)
     }, []);
 
     const fetchMoreData = async () => {
-        const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=9e1bd06f25544f399975122857782f19&category=entertainment&page=${page + 1}&pageSize=10`;
-        setPage(page + 1)
+        const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=9e1bd06f25544f399975122857782f19&category=${props.category}&page=${page + 1}&pageSize=10`;
+        setPage(prevState => prevState + 1)
         let data = await fetch(url);
         let parsedData = await data.json();
         setArticles(articles.concat(parsedData.articles));
         setTotalResults(parsedData.totalResults);
     }
-    console.log(totalResults);
+
+    const capitalizeFirst = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
 
     const newsComp = articles.map((article, index) => {
         return (
@@ -45,7 +50,7 @@ const News = (props) => {
     })
     return (
         <div className="news--container">
-            <h2 className="headline">Top News from NewsBoy</h2>
+            <h2 className="headline">Top Headlines from {capitalizeFirst(props.category)}</h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
